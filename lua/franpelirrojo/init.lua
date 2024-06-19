@@ -55,7 +55,7 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
 -- Areglando powershell
-vim.o.shell = vim.fn.executable('powershell')
+-- vim.o.shell = vim.fn.executable('powershell')
 
 require("franpelirrojo.lazy_init")
 print("Hola Fran")
