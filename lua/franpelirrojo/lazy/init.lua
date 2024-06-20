@@ -57,6 +57,18 @@ return{
             vim.keymap.set("n", "<C-t>", function() ui.nav_file(1) end)
             vim.keymap.set("n", "<C-h>", function() ui.nav_file(2) end)
         end
+    },
+    {
+        'mbbill/undotree',
+        config = function() 
+            vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+        end
+    },
+    {
+        'tpope/vim-fugitive',
+        config = function()
+            vim.keymap.set("n", "<leader>gs", vim.cmd.Git); -- Git status
+        end
     }
 }
 
