@@ -21,7 +21,7 @@ return{
             install.compilers = { "clang", "gcc" }
 
             require("nvim-treesitter.configs").setup({
-                ensure_installed = { "c", "cpp", "lua" },
+                ensure_installed = { "c", "cpp", "lua", "query" },
                 sync_install = false,
                 highlight = { enable = true },
                 indent = { enable = true },
