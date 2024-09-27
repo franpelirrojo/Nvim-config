@@ -45,7 +45,8 @@ local function get_workspace()
     local workspace_path = home .. "/.jdtls-workspace/workspace/"
     -- Determine the project name
     local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-    -- Create the workspace directory by concatenating the designated workspace path and the project name
+    -- Create the workspace directory by concatenating the designated 
+    -- workspace path and the project name
     local workspace_dir = workspace_path .. project_name
     return workspace_dir
 end

@@ -13,7 +13,7 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         config = function()
-            -- Mara java hay que asegurarse de que todo está instalados 
+            -- Para java hay que asegurarse de que todo está instalados 
             require("mason-lspconfig").setup({
                 ensure_installed = {"lua_ls" , "jdtls"},
             })
@@ -32,8 +32,8 @@ return {
     {
         "mfussenegger/nvim-jdtls",
         dependencies = {
-            "mfussenegger/nvim-dap"
-            -- "ray-x/lsp_signature.nvim"
+            "mfussenegger/nvim-dap",
+            "ray-x/lsp_signature.nvim"
         },
     },
     {
@@ -51,6 +51,10 @@ return {
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
             lspconfig.lua_ls.setup({
+                capabilities = capabilities
+            })
+
+            lspconfig.intelephense.setup({
                 capabilities = capabilities
             })
 
