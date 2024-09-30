@@ -23,7 +23,7 @@ return {
 				-- Always divide lualine in the middle
 				always_divide_middle = true,
 				-- Disable global status
-				globalstatus = false,
+				globalstatus = true,
 				-- Refresh every 1000 miliseconds
 				refresh = {
 					statusline = 1000,

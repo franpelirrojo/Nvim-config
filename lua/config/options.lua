@@ -28,7 +28,8 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
-vim.opt.updatetime = 100
+vim.opt.updatetime = 500
+vim.opt.timeoutlen = 800
 
 vim.opt.clipboard = "unnamedplus"
 vim.opt.fileencoding = "utf-8"

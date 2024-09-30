@@ -1,8 +1,8 @@
 return {
     {
+        -- Gestiona e instala LSP local
         "williamboman/mason.nvim",
         config = function()
-            -- setup mason with default properties
             require("mason").setup({
                 ui = {
                     border = "rounded"
@@ -11,17 +11,17 @@ return {
         end
     },
     {
+        -- Rellena el hueco entre el cliente lsp de nvim y los servidores
+        -- de mason. Para configuración específica del comportamiento del LSP
         "williamboman/mason-lspconfig.nvim",
         config = function()
-            -- Para java hay que asegurarse de que todo está instalados 
             require("mason-lspconfig").setup({
                 ensure_installed = {"lua_ls" , "jdtls"},
             })
         end
     },
-    -- mason nvim dap utilizes mason to automatically ensure debug adapters you want installed are installed,
-    -- mason-lspconfig will not automatically install debug adapters for us
     {
+        -- Lo mismo que mason-lsp pero con daps mediante nvim-dap
         "jay-babu/mason-nvim-dap.nvim",
         config = function()
             require("mason-nvim-dap").setup({
@@ -37,29 +37,32 @@ return {
         },
     },
     {
+        -- Dependencia de jdtls, recalca los aprametros en la declaración de
+        -- una función. Muy útil para java sobre todo.
         "ray-x/lsp_signature.nvim",
         config = function()
             require "lsp_signature".setup()
         end
     },
     {
+        -- Permite la comunicación entre nvim y los LSP
         "neovim/nvim-lspconfig",
         config = function()
             local lspconfig = require("lspconfig")
-
-            -- Esto le dice al lsp que puede autocompletar
+            -- Conexión con el motor de autocompletado
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+            -- Configurar cada servidor. Excepto java.
             lspconfig.lua_ls.setup({
                 capabilities = capabilities
             })
 
-            lspconfig.intelephense.setup({
+            lspconfig.zk.setup({
                 capabilities = capabilities
             })
 
             -- Set vim motion for <Space> + c + h to show code documentation about the code the cursor is currently over if available
-            vim.keymap.set("n", "<leader>ch", vim.lsp.buf.hover, { desc = "[C]ode [H]over Documentation" })
+            vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "[C]ode [H]over Documentation" })
             -- Set vim motion for <Space> + c + d to go where the code/variable under the cursor was defined
             vim.keymap.set("n", "<leader>cd", vim.lsp.buf.definition, { desc = "[C]ode Goto [D]efinition" })
             -- Set vim motion for <Space> + c + a for display code action suggestions for code diagnostics in both normal and visual mode

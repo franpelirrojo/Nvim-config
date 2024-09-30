@@ -1,4 +1,4 @@
--- Setup our JDTLS server any time we open up a java file
+-- Inicia JDTLS cuando el bufer es un archivo java
 vim.cmd [[
     augroup jdtls_lsp
         autocmd!
