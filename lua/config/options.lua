@@ -1,4 +1,3 @@
-vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
@@ -12,9 +11,10 @@ vim.opt.signcolumn = "yes"
 vim.opt.wrap = false
 
 -- Hacer que undotree pueda acceder al historial aunque
--- se hayan guardado los cambios
+-- se hayan guardado los cambios.
 vim.opt.swapfile = false
 vim.opt.backup = false
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 -- Configuración de busqueda de texto
@@ -23,13 +23,13 @@ vim.opt.incsearch = true
 vim.opt.ignorecase = true
 
 vim.opt.termguicolors = true
-vim.opt.colorcolumn = "80"
+
+vim.opt.colorcolumn = "81"
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
-vim.opt.updatetime = 500
-vim.opt.timeoutlen = 800
+vim.opt.updatetime = 50
 
 vim.opt.clipboard = "unnamedplus"
 vim.opt.fileencoding = "utf-8"

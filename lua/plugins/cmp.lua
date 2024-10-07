@@ -28,6 +28,7 @@ return {
 
 			cmp.setup({
 				completion = {
+                    -- TODO: MIRAR ESTO
 					-- menu: display options in a menu
 					-- menuone: automatically select the first option of the menu
 					-- preview: automatically display the completion candiate as you navigate the menu

@@ -1,7 +1,7 @@
 -- Inicia JDTLS cuando el bufer es un archivo java
-vim.cmd [[
+vim.cmd([[
     augroup jdtls_lsp
         autocmd!
         autocmd FileType java lua require'config.jdtls'.setup_jdtls()
     augroup end
-]]
+]])

@@ -5,7 +5,7 @@ return
     config = function ()
         local install = require('nvim-treesitter.install')
         install.prefer_git = false
-        install.compilers = { "gcc", "clang" }
+        install.compilers = { "gcc" }
 
         require("nvim-treesitter.configs").setup({
             ensure_installed = { "vim" , "vimdoc" , "c" ,"cpp", "lua", "query", "java",
