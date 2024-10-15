@@ -14,6 +14,8 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+--Pegar sin sobreescribir el buffer
+vim.keymap.set("x", "<leader>p", "\"_dP")
 --Separar los portapapeles de nvim y del sistema
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
@@ -21,8 +23,6 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 --Borrar sin guardar en el buffer
 vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
---Pegar sin sobreescribir el buffer
-vim.keymap.set("x", "<leader>p", "\"_dP")
 
 --Sustituye la palabra sobre la que estabas en todo el docuemento
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])

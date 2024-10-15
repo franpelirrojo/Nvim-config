@@ -28,12 +28,7 @@ return {
 
 			cmp.setup({
 				completion = {
-                    -- TODO: MIRAR ESTO
-					-- menu: display options in a menu
-					-- menuone: automatically select the first option of the menu
-					-- preview: automatically display the completion candiate as you navigate the menu
-					-- noselect: prevent neovim from automatically selecting a completion option while navigating the menu
-					competeopt = "menu,menuone,preview,noselect",
+					completeopt = "menu,menuone,select",
 				},
 				-- Registra lasnip cómo una fuente de snippets del motor
 				snippet = {
@@ -42,20 +37,15 @@ return {
 					end,
 				},
 				mapping = cmp.mapping.preset.insert({
-					-- previous suggestion
+					["<C-y>"] = cmp.mapping.confirm({ select = true }),
 					["<C-k>"] = cmp.mapping.select_prev_item(),
-					-- next suggestion
 					["<C-j>"] = cmp.mapping.select_next_item(),
-					["<C-b>"] = cmp.mapping.scroll_docs(-4),
-					["<C-f>"] = cmp.mapping.scroll_docs(4),
-					-- show completion suggestions
-					["<C-Space"] = cmp.mapping.complete(),
-					-- close completion window
+					["<C-p>"] = cmp.mapping.scroll_docs(-4),
+					["<C-n>"] = cmp.mapping.scroll_docs(4),
 					["<C-e>"] = cmp.mapping.abort(),
-					-- confirm completion, only when you explicitly selected an option
-					["<CR>"] = cmp.mapping.confirm({ select = false }),
 				}),
-                -- Fuentes de completado en orden de prioridad.
+				-- Fuentes de completado en orden de prioridad.
+                -- fuente
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },

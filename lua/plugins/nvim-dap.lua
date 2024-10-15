@@ -16,11 +16,10 @@ return {
             dapui.open()
         end
 
-        -- set a vim motion for <Space> + d + t to toggle a breakpoint at the line where the cursor is currently on
         vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint, { desc = "[D]ebug [B]reakpoint" })
-        -- set a vim motion for <Space> + d + s to start the debugger and launch the debugging ui
         vim.keymap.set("n", "<leader>ds", dap.continue, { desc = "[D]ebug [S]tart" })
-        -- set a vim motion to close the debugging ui
         vim.keymap.set("n", "<leader>dc", dapui.close, {desc = "[D]ebug [C]lose"})
+        vim.keymap.set("n", "<F7>", dap.step_into, {desc = "Step into"})
+        vim.keymap.set("n", "<F8>", dap.step_over, {desc = "Step over"})
     end
 }
