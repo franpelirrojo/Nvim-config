@@ -10,7 +10,6 @@ return {
     {
         "tpope/vim-fugitive",
         config = function()
-            vim.keymap.set("n", "<leader>gb", ":Git blame<cr>", {desc="[G]it [B]lame"})
             vim.keymap.set("n", "<leader>ga", ":Git add .<cr>", {desc = "[G]it [A]dd"})
             vim.keymap.set("n", "<leader>gc", ":Git commit<cr>", {desc = "[G]it [C]ommit"})
             vim.keymap.set("n", "<leader>gp", ":Git push<cr>", {desc = "[G]it [P]ush"})

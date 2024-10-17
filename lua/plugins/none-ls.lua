@@ -12,7 +12,7 @@ return {
 			sources = {
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.mdformat.with({
-					filetypes = { "markdown" },
+				    filetypes = { "markdown" },
 				}),
 				null_ls.builtins.formatting.prettierd.with({
 					filetypes = { "html", "css" },
