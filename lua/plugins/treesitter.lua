@@ -9,7 +9,7 @@ return
 
         require("nvim-treesitter.configs").setup({
             ensure_installed = { "vim" , "vimdoc" , "c" ,"cpp", "lua", "query", "java",
-                    "markdown" ,"markdown_inline" ,"gitignore" },
+                    "markdown" ,"markdown_inline" ,"gitignore", "javascript" },
             auto_install = false,
             highlight = { enable = true },
             indent = { enable = true },
