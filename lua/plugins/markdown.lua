@@ -10,6 +10,6 @@ return {
         vim.g.mkdp_auto_close = 0
         vim.g.mkdp_browser = 'explorer.exe'
 
-        vim.api.nvim_set_keymap('n', '<leader>mv', ':MarkdownPreviewToggle<CR>', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap('n', '<leader>mv', ':MarkdownPreview<cr>', { noremap = true, silent = true })
     end,
 }
