@@ -64,7 +64,7 @@ return {
 			end
 
 			-- Configurar cada servidor. Excepto java.
-			local servers = { "angularls", "lua_ls", "html", "ts_ls", "cssls" }
+			local servers = {"intelephense", "angularls", "lua_ls", "html", "ts_ls", "cssls" }
 			for _, lsp in pairs(servers) do
 				lspconfig[lsp].setup({
 					capabilities = capabilities,

@@ -17,6 +17,8 @@ return {
 				null_ls.builtins.formatting.prettierd.with({
 					filetypes = { "html", "css" },
 				}),
+                null_ls.builtins.diagnostics.phpcs,
+                null_ls.builtins.formatting.phpcbf
 			},
 		})
 
