@@ -24,4 +24,5 @@ local opts = {
 require("config.options")
 require("config.keymaps")
 require("config.autocmds")
+require("config.globals")
 require("lazy").setup("plugins", opts)

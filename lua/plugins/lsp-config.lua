@@ -43,34 +43,35 @@ return {
 			-- Conexión con el motor de autocompletado
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			local on_attach = function(client, bufnr)
-				vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "[C]ode [H]over Documentation" })
-				vim.keymap.set("n", "<leader>cd", vim.lsp.buf.definition, { desc = "[C]ode Goto [D]efinition" })
-				vim.keymap.set("n", "<leader>cD", vim.lsp.buf.declaration, { desc = "[C]ode Goto [D]eclaration" })
-				vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ctions" })
-				vim.keymap.set(
-					"n",
-					"<leader>cr",
-					require("telescope.builtin").lsp_references,
-					{ desc = "[C]ode Goto [R]eferences" }
-				)
-				vim.keymap.set(
-					"n",
-					"<leader>ci",
-					require("telescope.builtin").lsp_implementations,
-					{ desc = "[C]ode Goto [I]mplementations" }
-				)
-				vim.keymap.set("n", "<leader>cR", vim.lsp.buf.rename, { desc = "[C]ode [R]ename" })
-			end
+            vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "[C]ode [H]over Documentation" })
+            vim.keymap.set("n", "<leader>cd", vim.lsp.buf.definition, { desc = "[C]ode Goto [D]efinition" })
+            vim.keymap.set("n", "<leader>cD", vim.lsp.buf.declaration, { desc = "[C]ode Goto [D]eclaration" })
+            vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ctions" })
+            vim.keymap.set( "n", "<leader>cr", require("telescope.builtin").lsp_references, { desc = "[C]ode Goto [R]eferences" })
+            vim.keymap.set( "n", "<leader>ci", require("telescope.builtin").lsp_implementations, { desc = "[C]ode Goto [I]mplementations" })
+            vim.keymap.set("n", "<leader>cR", vim.lsp.buf.rename, { desc = "[C]ode [R]ename" })
 
-			-- Configurar cada servidor. Excepto java.
-			local servers = {"intelephense", "angularls", "lua_ls", "html", "ts_ls", "cssls" }
+			-- Configurar cada servidor. Excepto java y php que requieren configuraciones especiales
+			local servers = { "angularls", "html", "ts_ls", "cssls" }
 			for _, lsp in pairs(servers) do
 				lspconfig[lsp].setup({
 					capabilities = capabilities,
-					on_attach = on_attach,
 				})
 			end
+
+            lspconfig.lua_ls.setup({
+                capabilities = capabilities,
+                settings = {
+                    Lua = {
+                        -- Le damos al lsp el contexto de las funciones de nvim y sus plugins
+                        workspace = {
+                            library = vim.api.nvim_get_runtime_file("", true),
+                        },
+                    },
+                },
+            })
+
+
 		end,
 	},
 }

@@ -6,3 +6,5 @@ vim.bo.textwidth = 80
 vim.bo.formatoptions = vim.bo.formatoptions .. "t"
 vim.wo.wrap = true
 vim.wo.linebreak = true
+
+vim.keymap.set('i', '->', '→', { noremap = true })
