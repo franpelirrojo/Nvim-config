@@ -52,7 +52,7 @@ return {
             vim.keymap.set("n", "<leader>cR", vim.lsp.buf.rename, { desc = "[C]ode [R]ename" })
 
 			-- Configurar cada servidor. Excepto java y php que requieren configuraciones especiales
-			local servers = { "angularls", "html", "ts_ls", "cssls" }
+			local servers = { "angularls", "html", "ts_ls", "cssls", "marksman", "sqlls" }
 			for _, lsp in pairs(servers) do
 				lspconfig[lsp].setup({
 					capabilities = capabilities,

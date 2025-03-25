@@ -16,9 +16,9 @@ return {
             dapui.open()
         end
 
-        vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint, { desc = "[D]ebug [B]reakpoint" })
-        vim.keymap.set("n", "<leader>ds", dap.continue, { desc = "[D]ebug [S]tart" })
-        vim.keymap.set("n", "<leader>dc", dapui.close, {desc = "[D]ebug [C]lose"})
+        vim.keymap.set("n", "<leader>Db", dap.toggle_breakpoint, { desc = "[D]ebug [B]reakpoint" })
+        vim.keymap.set("n", "<leader>Ds", dap.continue, { desc = "[D]ebug [S]tart" })
+        vim.keymap.set("n", "<leader>Dc", dapui.close, {desc = "[D]ebug [C]lose"})
         vim.keymap.set("n", "<F7>", dap.step_into, {desc = "Step into"})
         vim.keymap.set("n", "<F8>", dap.step_over, {desc = "Step over"})
     end

@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) --Proyect view
+vim.keymap.set("n", "<leader>pv", vim.cmd.Explore) --Proyect view
 
 --Mover bloques en modo visual con autoindent
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -26,3 +26,6 @@ vim.keymap.set("v", "<leader>d", "\"_d")
 
 --Sustituye la palabra sobre la que estabas en todo el docuemento
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+--Para desarrollo, ejecuta el codigo de lua del buffer actual
+vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
