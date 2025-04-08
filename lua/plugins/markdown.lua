@@ -1,11 +1,8 @@
 return {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    build = "cd app && yarn install",
-    init = function()
-        vim.g.mkdp_filetypes = { "markdown" }
-    end,
     ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
     config = function()
         vim.g.mkdp_auto_close = 0
         vim.g.mkdp_browser = 'explorer.exe'

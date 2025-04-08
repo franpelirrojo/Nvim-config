@@ -14,13 +14,10 @@ return {
 				null_ls.builtins.formatting.stylua.with({
 					filetypes = { "lua" },
 				}),
-				null_ls.builtins.formatting.mdformat.with({
-					filetypes = { "markdown" },
-				}),
 				null_ls.builtins.formatting.prettierd.with({
-					filetypes = { "html", "css" },
+					filetypes = { "html", "css", "markdown"},
 				}),
-				null_ls.builtins.formatting.sqlfmt.with({
+				null_ls.builtins.formatting.sqruff.with({
 					filetypes = { "sql" },
 				}),
 			},

@@ -16,7 +16,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "jdtls" },
+				ensure_installed = {"clangd", "lua_ls", "jdtls" },
 			})
 		end,
 	},
@@ -52,7 +52,7 @@ return {
             vim.keymap.set("n", "<leader>cR", vim.lsp.buf.rename, { desc = "[C]ode [R]ename" })
 
 			-- Configurar cada servidor. Excepto java y php que requieren configuraciones especiales
-			local servers = { "angularls", "html", "ts_ls", "cssls", "marksman", "sqlls" }
+			local servers = { "html", "cssls", "marksman", "sqlls", "clangd"}
 			for _, lsp in pairs(servers) do
 				lspconfig[lsp].setup({
 					capabilities = capabilities,
@@ -70,7 +70,6 @@ return {
                     },
                 },
             })
-
 
 		end,
 	},
